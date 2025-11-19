@@ -1,0 +1,339 @@
+.estimaciones-container {
+    --estimaciones-primary-color: #00CCCC;
+    --estimaciones-secondary-color: #009999;
+    --estimaciones-accent-color: #CCF5F5;
+    --estimaciones-dark-color: #003035;
+    --estimaciones-light-color: #FFFFFF;
+    --estimaciones-error-color: #FF6B6B;
+    --estimaciones-success-color: #66CC99;
+    background: linear-gradient(-45deg, #fefcef, #bfc6c7, #52b3c0, #00cccc);
+    background-size: 100% 100%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 10px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.estimaciones-container .form-container {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    border-left: 3px solid var(--estimaciones-primary-color);
+    height: 80vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+.estimaciones-container .form-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.estimaciones-container .form-title {
+    color: var(--estimaciones-dark-color);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    position: relative;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.estimaciones-container .form-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--estimaciones-primary-color);
+    border-radius: 2px;
+}
+
+.estimaciones-container .form-label {
+    font-weight: 600;
+    color: var(--estimaciones-dark-color);
+    margin-bottom: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.estimaciones-container .required-field::after {
+    content: " *";
+    color: var(--estimaciones-error-color);
+}
+
+.estimaciones-container .section-title {
+    color: var(--estimaciones-dark-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+    position: relative;
+    padding-left: 0.6rem;
+}
+
+.estimaciones-container .section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 3px;
+    background: var(--estimaciones-primary-color);
+    border-radius: 2px;
+}
+
+.estimaciones-container .btn-calculate {
+    background-color: var(--estimaciones-primary-color);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 204, 204, 0.2);
+}
+
+.estimaciones-container .btn-calculate:hover {
+    background-color: var(--estimaciones-secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 204, 204, 0.3);
+}
+
+.estimaciones-container .btn-secondary {
+    background-color: var(--estimaciones-dark-color);
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.estimaciones-container .btn-secondary:hover {
+    background-color: var(--estimaciones-secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.estimaciones-container .map-container {
+    height: 80vh;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #e9ecef;
+}
+
+.estimaciones-container .map-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.estimaciones-container #map {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: opacity 0.3s ease;
+    right: 0;
+}
+
+.estimaciones-container .loading-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #bfc6c7;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 48, 53, 0.85);
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.estimaciones-container .loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #00CCCC;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.estimaciones-container .form-status-message {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.estimaciones-container .form-status-message.success {
+    color: var(--estimaciones-success-color);
+    background-color: rgba(102, 204, 153, 0.1);
+}
+
+.estimaciones-container .form-status-message.error {
+    color: var(--estimaciones-error-color);
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.estimaciones-container .form-control,
+.estimaciones-container .form-select {
+    border-radius: 5px;
+    padding: 0.4rem 2rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.estimaciones-container .form-control:focus,
+.estimaciones-container .form-select:focus {
+    border-color: var(--estimaciones-primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.15rem rgba(0, 204, 204, 0.25);
+    background: var(--estimaciones-light-color);
+}
+
+.estimaciones-container .invalid-feedback {
+    font-size: 0.7rem;
+    color: var(--estimaciones-error-color);
+}
+
+.estimaciones-container .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.estimaciones-container .animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.estimaciones-container .container-fluid.py-2 {
+    margin-top: 30px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.estimaciones-container .input-group-text {
+    background-color: var(--estimaciones-accent-color);
+    color: var(--estimaciones-dark-color);
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s ease;
+    padding: 0.4rem 0.6rem;
+}
+
+.estimaciones-container .input-group:focus-within .input-group-text {
+    background-color: var(--estimaciones-primary-color);
+    color: white;
+}
+
+.estimaciones-container .loading-spinner-field {
+    display: none;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.estimaciones-container .form-control.is-loading {
+    padding-right: 30px;
+}
+
+.estimaciones-container .pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 204, 204, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(0, 204, 204, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 204, 204, 0);
+    }
+}
+
+.estimaciones-container .container-fluid {
+    padding: 0.5rem;
+}
+
+.estimaciones-container .hidden-field {
+    display: none;
+}
+/* ------------------------------ */
+/* CONTENEDOR DE FORMULARIO + MAPA */
+/* ------------------------------ */
+
+.estimaciones-layout {
+    display: none;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Lado izquierdo: formulario */
+.estimaciones-layout .form-container {
+    flex: 0 0 40%;   /* 40% izquierda */
+    max-width: 40%;
+}
+
+/* Lado derecho: mapa */
+.estimaciones-layout .map-container {
+    flex: 1;         /* Ocupa el resto */
+    max-width: 60%;
+}
