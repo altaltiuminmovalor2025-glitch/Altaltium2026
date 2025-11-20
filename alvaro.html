@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- CSS DE ALCALIDAS-->
+     <link rel="stylesheet" href="css/alcldias.css">
+</head>
+<body>
+     <!-- Barra de navegación fija -->
+    <div class="navbar">
+        <a href="{% url 'welcome' %}#CDMX" class="back-button"><i class="fas fa-arrow-left"></i> Regresar</a
+      >
+      <div class="navbar-title">Alcaldía Álvaro Obregón</div>
+    </div>
+
+    <div class="container">
+      <!-- Sección Hero -->
+      <div class="hero">
+        <img
+          src="{% static 'images/alcaldia/alvaro4.jpg' %}"
+          alt="Álvaro Obregón"
+          class="hero-image"
+        />
+        <div class="hero-content">
+          <h1>Alcaldía Álvaro Obregón</h1>
+          <p>
+            Descubre la diversidad y riqueza cultural en el poniente de la
+            Ciudad de México
+          </p>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">759,000</div>
+          <div class="stat-label">Habitantes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">96.17</div>
+          <div class="stat-label">km² de superficie</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">90%</div>
+          <div class="stat-label">Cobertura de servicios</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7,900</div>
+          <div class="stat-label">hab/km² densidad</div>
+        </div>
+      </div>
+
+<!-- Map Section -->
+<div class="main-card">
+  <h2 class="section-title">Ubicación de la Alcaldía</h2>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271680!2d-99.2200!3d19.3600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f6!3m3!1m2!1s0x85d2020b0f5b7e3b%3A0x7b7b8b1c7d9e5c2!2s%C3%81lvaro%20Obreg%C3%B3n%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1729135280"
+      class="map-iframe"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+<!-- Main Content -->
+      <div class="main-card">
+        <h2 class="section-title">Características Principales</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-header">
+              <i class="fas fa-city"></i> Urbanismo
+            </div>
+            <div class="info-card-body">
+              <p>
+                <i class="fas fa-building"></i> <strong>Zona:</strong> Mixta
+                urbana-rural
+              </p>
+              <p>
+                <i class="fas fa-home"></i> <strong>Viviendas:</strong> 60%
+                casas, 40% departamentos
+              </p>
+              <p>
+                <i class="fas fa-road"></i> <strong>Vialidades:</strong> Buena
+                conectividad
+              </p>
+              <p>
+                <i class="fas fa-tree"></i> <strong>Áreas verdes:</strong> 20%
+                del territorio
+              </p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <i class="fas fa-chart-line"></i> Economía
+            </div>
+            <div class="info-card-body">
+              <p>
+                <i class="fas fa-briefcase"></i>
+                <strong>Actividad:</strong> Comercio, servicios e industria
+              </p>
+              <p>
+                <i class="fas fa-dollar-sign"></i>
+                <strong>Ingreso promedio:</strong> $20,000 MXN
+              </p>
+              <p>
+                <i class="fas fa-store"></i> <strong>Comercios:</strong> +4,000
+                establecimientos
+              </p>
+              <p>
+                <i class="fas fa-landmark"></i> <strong>Empresas:</strong> 10%
+                del total CDMX
+              </p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <i class="fas fa-graduation-cap"></i> Educación
+            </div>
+            <div class="info-card-body">
+              <p>
+                <i class="fas fa-school"></i> <strong>Escuelas:</strong> 150
+                instituciones
+              </p>
+              <p>
+                <i class="fas fa-university"></i>
+                <strong>Universidades:</strong> 5 campus
+              </p>
+              <p>
+                <i class="fas fa-book"></i> <strong>Bibliotecas:</strong> 10
+                públicas
+              </p>
+              <p>
+                <i class="fas fa-user-graduate"></i>
+                <strong>Educación superior:</strong> 55% de la población
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Lugares Emblemáticos</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img
+              src="{% static 'images/alcaldia/lugares/alvaro1.jpg' %}"
+              alt="Centro Comercial Santa Fe"
+              class="gallery-image"
+            />
+            <div class="gallery-caption">
+              Centro Comercial Santa Fe - Principal destino de compras
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="{% static 'images/alcaldia/lugares/alvaro2.jpg' %}"
+              alt="Parque La Mexicana"
+              class="gallery-image"
+            />
+            <div class="gallery-caption">
+              Parque La Mexicana - Espacio verde moderno
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="{% static 'images/alcaldia/lugares/alvaro3.jpg' %}"
+              alt="Desierto de los Leones"
+              class="gallery-image"
+            />
+            <div class="gallery-caption">
+              Desierto de los Leones - Parque nacional
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Colonias Principales</h2>
+        <div class="tag-container">
+          <span class="tag">Santa Fe</span>
+          <span class="tag">San Ángel</span>
+          <span class="tag">Jardines del Pedregal</span>
+          <span class="tag">Lomas de Plateros</span>
+          <span class="tag">Progreso Tizapán</span>
+          <span class="tag">Las Águilas</span>
+          <span class="tag">Florida</span>
+          <span class="tag">Campestre</span>
+          <span class="tag">Tetelpan</span>
+          <span class="tag">Olivar de los Padres</span>
+        </div>
+
+       
+        <h2 class="section-title">Datos de Propiedades</h2>
+        <div class="search-container" style="display: flex; align-items: center; gap: 10px;">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Buscar por estado, colonia o zona..."
+            style="flex: 1;"
+          />
+          <select id="zoneFilter" class="search-input" style="width: 200px;">
+            <option value="">Todas las Zonas</option>
+            <option value="Caliente">Caliente</option>
+            <option value="Tibia">Tibia</option>
+            <option value="Fría">Fría</option>
+          </select>
+        </div>
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Alcaldía</th>
+              <th>Colonia</th>
+              <th>Promedio (MXN)</th>
+              <th>Zona</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td>{{ colonia.id_estado.nombre|default:"Ciudad De México" }}</td>
+              <td>{{ colonia.id_municipio.nombre|default:"Álvaro Obregón" }}</td>
+              <td>{{ colonia.nombre|default:"No especificado" }}</td>
+              <td class="price-cell" data-price="{{ colonia.promedio_precio|default:'0' }}">$0.00</td>
+              <td>{{ colonia.zona|default:"No especificado" }}</td>
+            </tr>
+            <tr id="noDataRow">
+              <td colspan="5" class="data-placeholder">
+                No hay datos disponibles.
+              </td>
+            </tr>
+            <!-- Fila para mensaje dinámico de no resultados -->
+            <tr id="noResultsRow" style="display: none;">
+              <td colspan="5" class="data-placeholder">
+                No hay datos que coincidan con la búsqueda o filtro.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+</html>
